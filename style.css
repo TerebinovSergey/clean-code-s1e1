@@ -171,11 +171,11 @@
   vertical-align: middle;
 }
 
-.b-task_editMode .b-task__value {
+.b-task_edit-mode .b-task__value {
   display: inline-block;
   width: 224px;
 }
 
-.b-task_editMode label {
+.b-task_edit-mode label {
   display: none;
 }

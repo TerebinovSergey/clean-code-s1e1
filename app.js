@@ -91,7 +91,7 @@ var editTask=function(){
     var editInput=listItem.querySelector("input[type=text]");
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".b-btn_edit");
-    var containsClass=listItem.classList.contains("b-task_editMode");
+    var containsClass=listItem.classList.contains("b-task_edit-mode");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -105,7 +105,7 @@ var editTask=function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("b-task_editMode");
+    listItem.classList.toggle("b-task_edit-mode");
 };
 
 
@@ -126,8 +126,8 @@ var taskCompleted=function(){
     console.log("Complete Task...");
 
     //Append the task list item to the #completed-tasks
-    var listItem=this.parentNode;
-    listItem.classList.add("b-task-completed__label");
+    var listItem=this.parentNode;    
+    listItem.children[1].classList.add("b-task-completed__label");
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
@@ -139,8 +139,8 @@ var taskIncomplete=function(){
 //Mark task as incomplete.
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
-    var listItem=this.parentNode;
-    listItem.classList.remove("b-task-completed__label");
+    var listItem=this.parentNode;       
+    listItem.children[1].classList.remove("b-task-completed__label");
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
